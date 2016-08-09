@@ -492,7 +492,7 @@ function gigpress_add() {
 				  </tr>
 				  <tr>
 					<th scope="row"><label for="show_price"><?php _e("Price", "gigpress") ?>:</label></th>
-					<td><input type="text" size="10" name="show_price" id="show_price" value="<?php if(isset($show_price)) echo $show_price; ?>" /> <span class="description">(<?php _e("include currency symbol", "gigpress"); ?>)</span></td>
+					<td><input type="text" size="10" name="show_price" id="show_price" value="<?php if(isset($show_price)) echo $show_price; ?>" /> <span class="description">(<?php _e("no currency symbol", "gigpress"); ?>)</span></td>
 				  </tr>
 				  <tr>
 					<th scope="row"><label for="show_tix_url"><?php _e("Ticket URL", "gigpress") ?>:</label></th>
