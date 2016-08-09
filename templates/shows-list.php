@@ -58,7 +58,7 @@
 			<?php endif; ?>
 			
 			<?php if($showdata['price']) : ?>
-				<span class="gigpress-info-item"><span class="gigpress-info-label"><?php _e("Admission", "gigpress"); ?>:</span> <?php echo $showdata['price']; ?>.</span>
+				<span class="gigpress-info-item"><span class="gigpress-info-label"><?php _e("Admission", "gigpress"); ?>:</span> &pound;<?php echo $showdata['price']; ?>.</span>
 			<?php endif; ?>
 			
 			<?php if($showdata['admittance']) : ?>
