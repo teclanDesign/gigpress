@@ -430,6 +430,8 @@ function gigpress_json_ld($showdata)
 		$show_markup['url'] = $showdata['external_url'];
 	}
 	if(!empty($showdata['iso_end_date']) && $showdata['iso_end_date'] != $showdata['iso_date']) { $show_markup['endDate'] = $showdata['iso_end_date']; }
+	// addition - set an end date even if it is the same, recommended by Google Structured Data Testing Tool
+	else {$show_markup['endDate'] = $showdata['iso_date'];}
 	if(!empty($showdata['notes'])) { $show_markup['description'] = $showdata['notes']; }
 	if(!empty($showdata['status']) && $showdata['status'] == "cancelled") { $show_markup['eventStatus'] = "EventCancelled"; }
 	if(!empty($showdata['admittance'])) { $show_markup['typicalAgeRange'] = $showdata['admittance']; }
@@ -473,6 +475,8 @@ function gigpress_json_ld($showdata)
 
 	// Add offer attributes
 	if(!empty($showdata['price'])) { $offer_markup['price'] = $showdata['price']; }
+	// NEED TO ADD PRICE CURRENCY
+	$offer_markup['priceCurrency'] = 'GBP';
 	if(!empty($showdata['ticket_url'])) { $offer_markup['url'] = $showdata['ticket_url']; }
 	if(!empty($showdata['ticket_phone'])) { $offer_markup['seller'] = array("@type" => "Organization", "telephone" => $showdata['ticket_phone']); }
 	if(!empty($showdata['status']) && $showdata['status'] == "soldout") { $offer_markup['availability'] = "SoldOut"; }
